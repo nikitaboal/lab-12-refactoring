@@ -14,24 +14,24 @@ PageContainer::PageContainer() : Histogram(),
 }
 
 PageContainer::PageContainer(const Log& log, UsedMemory* memory_counter) :
-                                                                           Histogram(),
-                                                                           wasLogCreated(false),
-                                                                           wasMemoryCounterCreated(false),
-                                                                           wasStatSenderCreated(false),
-                                                                           log_(&log),
-                                                                           memory_counter_(memory_counter),
-                                                                           stat_sender_(new StatSender(log)),
-                                                                           reloadNum(0),
-                                                                           loadNum(0) {}
+     Histogram(),
+     wasLogCreated(false),
+     wasMemoryCounterCreated(false),
+     wasStatSenderCreated(false),
+     log_(&log),
+     memory_counter_(memory_counter),
+     stat_sender_(new StatSender(log)),
+     reloadNum(0),
+     loadNum(0) {}
 PageContainer::PageContainer(StatSender* sender, UsedMemory* memory_counter):
-                                                                               Histogram(),
-                                                                               wasLogCreated(true),
-                                                                               wasMemoryCounterCreated(false),
-                                                                               wasStatSenderCreated(false),
-                                                                               memory_counter_(memory_counter),
-                                                                               stat_sender_(sender),
-                                                                               reloadNum(0),
-                                                                               loadNum(0) {
+     Histogram(),
+     wasLogCreated(true),
+     wasMemoryCounterCreated(false),
+     wasStatSenderCreated(false),
+     memory_counter_(memory_counter),
+     stat_sender_(sender),
+     reloadNum(0),
+     loadNum(0) {
   this->log_ = new Log;
 }
 
